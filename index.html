@@ -4,41 +4,29 @@
 <meta charset="UTF-8">
 <title>CSoul Hub</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="particle-layer1" class="particle-layer"></div>
-<div id="particle-layer2" class="particle-layer"></div>
 
-<div class="landing">
-  <img src="logo.png" class="logo" alt="CSoul Hub Logo">
-  <h1 class="glow-text">CSoul Hub</h1>
-  <div class="buttons">
-    <a href="home.html" class="btn">Continue</a>
-    <a href="https://discord.gg/UWBFhMZwkw" target="_blank" class="btn discord">Join Discord</a>
+<div class="particles red"></div>
+<div class="particles blue"></div>
+
+<div class="popup" id="popup">
+  <img src="logo.png" class="popup-logo">
+  <h1 class="glitch">CSoul Hub</h1>
+  <p class="popup-text">CSoul is a Discord server that creates Discord bots, Roblox scripts, and has a friendly community.</p>
+  <div class="popup-buttons">
+    <a href="home.html" class="shiny-btn">Enter Hub</a>
+    <a href="https://discord.gg/UWBFhMZwkw" class="outline-btn">Join Discord</a>
   </div>
 </div>
 
 <script>
-function createParticles(layer, count, sizeMin, sizeMax, speedMin, speedMax, opacityMin, opacityMax){
-  const container = document.getElementById(layer);
-  for(let i=0;i<count;i++){
-    const p=document.createElement('div');
-    p.className='particle';
-    const size = sizeMin + Math.random()*(sizeMax-sizeMin);
-    p.style.width=size+'px';
-    p.style.height=size+'px';
-    p.style.left=Math.random()*window.innerWidth+'px';
-    p.style.top=Math.random()*window.innerHeight+'px';
-    p.style.animationDuration=(speedMin + Math.random()*(speedMax-speedMin))+'s';
-    p.style.opacity=opacityMin + Math.random()*(opacityMax-opacityMin);
-    container.appendChild(p);
-  }
+// Fade-in popup
+window.onload = () => {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'flex';
 }
-
-// Layer1 = small particles, Layer2 = bigger/slow ones
-createParticles('particle-layer1', 80, 3,6,5,12,0.2,0.6);
-createParticles('particle-layer2', 40, 8,15,8,18,0.1,0.4);
 </script>
 </body>
 </html>
