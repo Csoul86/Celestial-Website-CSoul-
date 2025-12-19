@@ -1,6 +1,16 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
 body{background:#05000c;color:#fff;overflow:hidden;min-height:100vh}
 canvas{position:fixed;inset:0;z-index:-1}
+.popup{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);animation:fadeIn 1s;z-index:10}
+.popup-box{background:rgba(30,10,50,.85);border-radius:20px;padding:35px 40px;text-align:center;box-shadow:0 0 40px rgba(140,0,255,.6);animation:scaleIn .8s;width:90%;max-width:400px}
+.popup-logo{width:120px;height:auto;margin-bottom:20px;animation:float 3s ease-in-out infinite}
+.popup h1{font-size:26px;margin-bottom:10px}
+.popup p{font-size:14px;line-height:1.5em;margin-bottom:20px}
+.popup-buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+.shiny-btn{padding:12px 28px;border-radius:12px;background:linear-gradient(90deg,#7f00ff,#00c6ff,#7f00ff);color:#fff;text-decoration:none;font-weight:600;box-shadow:0 0 15px rgba(0,198,255,.8);transition:.3s}
+.shiny-btn:hover{transform:scale(1.08)}
+.outline-btn{padding:12px 28px;border-radius:12px;border:1px solid #00c6ff;color:#fff;text-decoration:none;font-weight:600;transition:.3s}
+.outline-btn:hover{transform:scale(1.08)}
 .container{max-width:1100px;margin:80px auto;padding:30px}
 .card{background:rgba(20,10,40,.7);border-radius:20px;padding:25px;margin-bottom:25px;backdrop-filter:blur(12px);box-shadow:0 0 30px rgba(120,0,255,.4);animation:slideUp 1s}
 .card h2{margin-bottom:15px;font-size:20px}
@@ -12,3 +22,6 @@ canvas{position:fixed;inset:0;z-index:-1}
 .team p{margin:6px 0;font-size:14px;animation:glitch 2s infinite}
 @keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
 @keyframes glitch{0%{text-shadow:2px 0 red,-2px 0 blue}50%{text-shadow:-2px 0 red,2px 0 blue}100%{text-shadow:2px 0 red,-2px 0 blue}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{transform:scale(.7)}to{transform:scale(1)}}
