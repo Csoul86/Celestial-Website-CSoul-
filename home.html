@@ -2,79 +2,75 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CSoul Hub | Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSoul Home</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="particles red"></div>
-<div class="particles blue"></div>
+<canvas id="bg"></canvas>
 
-<header>
-  <img src="logo.png" class="logo-small">
-  <h1 class="glitch">CSoul Hub</h1>
-</header>
+<div class="container">
 
-<section class="box">
-<h2>CSoul All About</h2>
-<p>
-CSoul is a Discord server that creates high-quality Discord bots, powerful Roblox scripts, and maintains a friendly and active community.
-</p>
-</section>
-
-<section class="box">
-<h2>Scripts</h2>
-
-<div class="script-card">
+<div class="card">
+<h2>Diesel n Steel</h2>
+<div class="script">
 <img src="diesel_logo.png">
-<div class="script-info">
-<h3>Diesel N Steel</h3>
-<div class="loadstring">
-<code>loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/1c827020d6cad72f10adeec74df3628d5c5ef06ac6cdb517e6818993f4e73bb8/download"))()</code>
-<button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)">COPY</button>
-</div>
+<div class="code" id="dns">loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/1c827020d6cad72f10adeec74df3628d5c5ef06ac6cdb517e6818993f4e73bb8/download"))()</div>
+<button class="copy" onclick="copy('dns')">Copy</button>
 </div>
 </div>
 
-<div class="script-card">
+<div class="card">
+<h2>Aladia PvP</h2>
+<div class="script">
 <img src="aladia_logo.png">
-<div class="script-info">
-<h3>Aladia PvP</h3>
-<div class="loadstring">
-<code>loadstring(game:HttpGet("https://raw.githubusercontent.com/liljam0/CsoulAladiapvp-Loader20-.lua/refs/heads/main/CsoulAladiapvpLoader20%25.lua.txt"))()</code>
-<button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)">COPY</button>
-</div>
+<div class="code" id="ala">loadstring(game:HttpGet("https://raw.githubusercontent.com/liljam0/CsoulAladiapvp-Loader20-.lua/refs/heads/main/CsoulAladiapvpLoader20%25.lua.txt"))()</div>
+<button class="copy" onclick="copy('ala')">Copy</button>
 </div>
 </div>
 
-<div class="script-card">
+<div class="card">
+<h2>DNS Sticker Stealer</h2>
+<div class="script">
 <img src="diesel_logo.png">
-<div class="script-info">
-<h3>DNS Sticker Stealer</h3>
-<div class="loadstring">
-<code>loadstring(game:HttpGet("https://raw.githubusercontent.com/Csoul86/CSoul-/refs/heads/main/Sticker%20Stealer.Lua"))()</code>
-<button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)">COPY</button>
-</div>
+<div class="code" id="stk">loadstring(game:HttpGet("https://raw.githubusercontent.com/Csoul86/CSoul-/refs/heads/main/Sticker%20Stealer.Lua"))()</div>
+<button class="copy" onclick="copy('stk')">Copy</button>
 </div>
 </div>
 
-</section>
-
-<section class="box tall">
+<div class="card team">
 <h2>Moderation Team</h2>
-
-<div class="glitch-text">
-<p>Owner:</p>
-<p>Zel</p>
-<p>Co Owner:</p>
-<p>Kiro</p>
-<p>Moderator:</p>
-<p>Jam, Roben, JM, Cassy, Jee, Juswa, Zian, SongSong</p>
-<p>Trial Moderator:</p>
-<p>Zyph, Renseu, Miniken, Natsu</p>
+<p>Owner: Zel</p>
+<p>Co Owner: Kiro</p>
+<p>Moderator: Jam, Roben, JM, Cassy, Jee, Juswa, Zian, SongSong</p>
+<p>Trial Moderator: Zyph, Renseu, Miniken, Natsu</p>
 </div>
-</section>
+
+</div>
+
+<script>
+const c=document.getElementById("bg"),x=c.getContext("2d")
+c.width=innerWidth;c.height=innerHeight
+let stars=[...Array(200)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,s:Math.random()*2}))
+let ash=[...Array(120)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*3+1,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,c:Math.random()>.5?"red":"blue"}))
+function draw(){
+x.clearRect(0,0,c.width,c.height)
+stars.forEach(s=>{x.fillStyle="#fff";x.fillRect(s.x,s.y,s.s,s.s)})
+ash.forEach(a=>{
+x.fillStyle=a.c=="red"?"rgba(255,0,80,.6)":"rgba(0,180,255,.6)"
+x.beginPath();x.arc(a.x,a.y,a.r,0,Math.PI*2);x.fill()
+a.x+=a.dx;a.y+=a.dy
+if(a.x<0||a.x>c.width)a.dx*=-1
+if(a.y<0||a.y>c.height)a.dy*=-1
+})
+requestAnimationFrame(draw)
+}
+draw()
+window.onresize=()=>{c.width=innerWidth;c.height=innerHeight}
+function copy(id){navigator.clipboard.writeText(document.getElementById(id).innerText)}
+</script>
 
 </body>
 </html>
