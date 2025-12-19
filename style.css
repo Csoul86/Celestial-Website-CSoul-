@@ -1,1 +1,146 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  background-color: #0b3d91;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.ash {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: ashMove linear infinite;
+}
+
+@keyframes ashMove {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.5);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-200px) translateX(100px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-400px) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 30px;
+  background-color: #8b00ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.discord {
+  background-color: #5865F2;
+}
+
+.page {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.card {
+  background-color: #1c1c1c;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.script-card {
+  background-color: #141414;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  background-color: #8b00ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.copy-btn:hover {
+  opacity: 0.85;
+}
+
+code {
+  background-color: rgba(0,0,0,0.3);
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 25px;
+  background-color: #8b00ff;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.back:hover {
+  opacity: 0.85;
+  }
