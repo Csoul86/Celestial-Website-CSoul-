@@ -13,40 +13,34 @@
 <h2>Available Scripts</h2>
 <div class="script-card">
   <img src="diesel_logo.png" class="script-logo" alt="Diesel N Steel Logo">
-  <div class="script-info">
+  <div class="script-info discord-style">
     <p class="glow-text">Diesel N Steel Script</p>
-    <code id="dieselScript">loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/1c827020d6cad72f10adeec74df3628d5c5ef06ac6cdb517e6818993f4e73bb8/download"))()</code>
-    <button class="copy-btn" onclick="copyScript()">Copy</button>
+    <div class="loadstring-box">
+      <code id="dieselScript">loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/1c827020d6cad72f10adeec74df3628d5c5ef06ac6cdb517e6818993f4e73bb8/download"))()</code>
+    </div>
+    <button class="copy-btn shiny" onclick="copyScript()">Copy</button>
   </div>
 </div>
 
-<h2>Staff Team</h2>
-<div class="card">
+<h2>Moderation Team</h2>
+<div class="card staff-card">
   <p class="glow-text">Owner: Zel</p>
   <p>Co-Owner: Kiro</p>
   <p>Moderators: Jam, Roben, JM, Cassy, Jee, Juswa, Zian, SongSong</p>
   <p>Trial Moderators: Zyph, Renseu, Miniken, Natsu</p>
 </div>
 
-<h2>Official Discord Bot</h2>
-<div class="card">
-  <p class="glow-text">CSoul Bot</p>
-  <p>• Key System</p>
-  <p>• Script Management</p>
-  <p>• Security & Moderation</p>
-</div>
-
 <a href="index.html" class="btn back">Back</a>
 </div>
 
 <script>
-const ashCount=50;
+const ashCount=100;
 for(let i=0;i<ashCount;i++){
   const ash=document.createElement('div');
   ash.className='ash';
   ash.style.left=Math.random()*window.innerWidth+'px';
-  ash.style.top=window.innerHeight+Math.random()*200+'px';
-  ash.style.width=5+Math.random()*8+'px';
+  ash.style.top=window.innerHeight+Math.random()*300+'px';
+  ash.style.width=5+Math.random()*10+'px';
   ash.style.height=ash.style.width;
   ash.style.animationDuration=3+Math.random()*5+'s';
   document.querySelector('.ash-container').appendChild(ash);
