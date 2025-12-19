@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSoul</title>
+<title>CSoul Hub</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -13,10 +13,13 @@
 
 <div class="popup" id="popup">
   <div class="popup-box">
-    <img src="diesel_logo.png">
+    <img src="diesel_logo.png" class="popup-logo">
     <h1>CSoul Hub</h1>
     <p>CSoul is a Discord server that creates high-quality Discord bots, powerful Roblox scripts, and maintains a friendly and active community.</p>
-    <button onclick="closePopup()">Enter</button>
+    <div class="popup-buttons">
+      <a href="home.html" class="shiny-btn">Continue</a>
+      <a href="https://discord.gg/UWBFhMZwkw" class="outline-btn">Join Discord</a>
+    </div>
   </div>
 </div>
 
@@ -39,7 +42,6 @@ requestAnimationFrame(draw)
 }
 draw()
 window.onresize=()=>{c.width=innerWidth;c.height=innerHeight}
-function closePopup(){window.location.href="home.html"}
 </script>
 
 </body>
