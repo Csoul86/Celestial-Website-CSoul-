@@ -7,7 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="ash-container"></div>
+<div id="particle-layer1" class="particle-layer"></div>
+<div id="particle-layer2" class="particle-layer"></div>
+
 <div class="landing">
   <img src="logo.png" class="logo" alt="CSoul Hub Logo">
   <h1 class="glow-text">CSoul Hub</h1>
@@ -16,17 +18,27 @@
     <a href="https://discord.gg/UWBFhMZwkw" target="_blank" class="btn discord">Join Discord</a>
   </div>
 </div>
+
 <script>
-for(let i=0;i<100;i++){
-  const ash=document.createElement('div');
-  ash.className='ash';
-  ash.style.left=Math.random()*window.innerWidth+'px';
-  ash.style.top=window.innerHeight+Math.random()*300+'px';
-  ash.style.width=5+Math.random()*10+'px';
-  ash.style.height=ash.style.width;
-  ash.style.animationDuration=3+Math.random()*5+'s';
-  document.querySelector('.ash-container').appendChild(ash);
+function createParticles(layer, count, sizeMin, sizeMax, speedMin, speedMax, opacityMin, opacityMax){
+  const container = document.getElementById(layer);
+  for(let i=0;i<count;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    const size = sizeMin + Math.random()*(sizeMax-sizeMin);
+    p.style.width=size+'px';
+    p.style.height=size+'px';
+    p.style.left=Math.random()*window.innerWidth+'px';
+    p.style.top=Math.random()*window.innerHeight+'px';
+    p.style.animationDuration=(speedMin + Math.random()*(speedMax-speedMin))+'s';
+    p.style.opacity=opacityMin + Math.random()*(opacityMax-opacityMin);
+    container.appendChild(p);
+  }
 }
+
+// Layer1 = small particles, Layer2 = bigger/slow ones
+createParticles('particle-layer1', 80, 3,6,5,12,0.2,0.6);
+createParticles('particle-layer2', 40, 8,15,8,18,0.1,0.4);
 </script>
 </body>
 </html>
