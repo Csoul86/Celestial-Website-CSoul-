@@ -7,7 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="ash-container"></div>
+<div id="particle-layer1" class="particle-layer"></div>
+<div id="particle-layer2" class="particle-layer"></div>
+
 <div class="page">
 
 <h2>Available Scripts</h2>
@@ -24,27 +26,38 @@
 
 <h2>Moderation Team</h2>
 <div class="card staff-card">
-  <p class="glow-text">Owner: Zel</p>
-  <p>Co-Owner: Kiro</p>
-  <p>Moderators: Jam, Roben, JM, Cassy, Jee, Juswa, Zian, SongSong</p>
-  <p>Trial Moderators: Zyph, Renseu, Miniken, Natsu</p>
+  <p class="glow-text">Owner:</p>
+  <p>Zel</p>
+  <p class="glow-text">Co-Owner:</p>
+  <p>Kiro</p>
+  <p class="glow-text">Moderators:</p>
+  <p>Jam, Roben, JM, Cassy, Jee, Juswa, Zian, SongSong</p>
+  <p class="glow-text">Trial Moderators:</p>
+  <p>Zyph, Renseu, Miniken, Natsu</p>
 </div>
 
 <a href="index.html" class="btn back">Back</a>
 </div>
 
 <script>
-const ashCount=100;
-for(let i=0;i<ashCount;i++){
-  const ash=document.createElement('div');
-  ash.className='ash';
-  ash.style.left=Math.random()*window.innerWidth+'px';
-  ash.style.top=window.innerHeight+Math.random()*300+'px';
-  ash.style.width=5+Math.random()*10+'px';
-  ash.style.height=ash.style.width;
-  ash.style.animationDuration=3+Math.random()*5+'s';
-  document.querySelector('.ash-container').appendChild(ash);
+function createParticles(layer, count, sizeMin, sizeMax, speedMin, speedMax, opacityMin, opacityMax){
+  const container = document.getElementById(layer);
+  for(let i=0;i<count;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    const size = sizeMin + Math.random()*(sizeMax-sizeMin);
+    p.style.width=size+'px';
+    p.style.height=size+'px';
+    p.style.left=Math.random()*window.innerWidth+'px';
+    p.style.top=Math.random()*window.innerHeight+'px';
+    p.style.animationDuration=(speedMin + Math.random()*(speedMax-speedMin))+'s';
+    p.style.opacity=opacityMin + Math.random()*(opacityMax-opacityMin);
+    container.appendChild(p);
+  }
 }
+
+createParticles('particle-layer1', 80, 3,6,5,12,0.2,0.6);
+createParticles('particle-layer2', 40, 8,15,8,18,0.1,0.4);
 
 function copyScript(){
   const script=document.getElementById("dieselScript").innerText;
