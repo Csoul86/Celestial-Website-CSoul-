@@ -17,12 +17,12 @@
   </div>
 </div>
 <script>
-for(let i=0;i<50;i++){
+for(let i=0;i<100;i++){
   const ash=document.createElement('div');
   ash.className='ash';
   ash.style.left=Math.random()*window.innerWidth+'px';
-  ash.style.top=window.innerHeight+Math.random()*200+'px';
-  ash.style.width=5+Math.random()*8+'px';
+  ash.style.top=window.innerHeight+Math.random()*300+'px';
+  ash.style.width=5+Math.random()*10+'px';
   ash.style.height=ash.style.width;
   ash.style.animationDuration=3+Math.random()*5+'s';
   document.querySelector('.ash-container').appendChild(ash);
