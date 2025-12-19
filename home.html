@@ -1,84 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CSoul Hub | Home</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Extra styles for copy button */
-    .script-card {
-      background-color: #141414;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .copy-btn {
-      padding: 6px 12px;
-      background-color: #8b00ff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .copy-btn:hover {
-      opacity: 0.85;
-    }
-
-    code {
-      background-color: #0a0a0a;
-      padding: 3px 6px;
-      border-radius: 4px;
-      font-size: 0.9em;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>CSoul Hub | Home</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="ash-container"></div>
+<div class="page">
 
-  <div class="page">
-
-    <h2>Available Scripts</h2>
-    <div class="script-card">
-      <div>
-        <p>Diesel N Steel Script</p>
-        <code id="dieselScript">loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/1c827020d6cad72f10adeec74df3628d5c5ef06ac6cdb517e6818993f4e73bb8/download"))()</code>
-      </div>
-      <button class="copy-btn" onclick="copyScript()">Copy</button>
-    </div>
-
-    <h2>Staff Team</h2>
-    <div class="card">
-      <p>Owner: Zel</p>
-      <p>Co-Owner: Kiro</p>
-      <p>Moderators: Jam, Roben, JM, Cassy, Jee, Juswa, Zian, SongSong</p>
-      <p>Trial Moderators: Zyph, Renseu, Miniken, Natsu</p>
-    </div>
-
-    <h2>Official Discord Bot</h2>
-    <div class="card">
-      <p>CSoul Bot</p>
-      <p>• Key System</p>
-      <p>• Script Management</p>
-      <p>• Security & Moderation</p>
-    </div>
-
-    <a href="index.html" class="btn back">Back</a>
-
+<h2>Available Scripts</h2>
+<div class="script-card">
+  <img src="diesel_logo.png" class="script-logo" alt="Diesel N Steel Logo">
+  <div class="script-info">
+    <p class="glow-text">Diesel N Steel Script</p>
+    <code id="dieselScript">loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/1c827020d6cad72f10adeec74df3628d5c5ef06ac6cdb517e6818993f4e73bb8/download"))()</code>
+    <button class="copy-btn" onclick="copyScript()">Copy</button>
   </div>
+</div>
 
-  <script>
-    function copyScript() {
-      const script = document.getElementById("dieselScript").innerText;
-      navigator.clipboard.writeText(script).then(() => {
-        alert("Loadstring copied to clipboard!");
-      });
-    }
-  </script>
+<h2>Staff Team</h2>
+<div class="card">
+  <p class="glow-text">Owner: Zel</p>
+  <p>Co-Owner: Kiro</p>
+  <p>Moderators: Jam, Roben, JM, Cassy, Jee, Juswa, Zian, SongSong</p>
+  <p>Trial Moderators: Zyph, Renseu, Miniken, Natsu</p>
+</div>
 
+<h2>Official Discord Bot</h2>
+<div class="card">
+  <p class="glow-text">CSoul Bot</p>
+  <p>• Key System</p>
+  <p>• Script Management</p>
+  <p>• Security & Moderation</p>
+</div>
+
+<a href="index.html" class="btn back">Back</a>
+</div>
+
+<script>
+const ashCount=50;
+for(let i=0;i<ashCount;i++){
+  const ash=document.createElement('div');
+  ash.className='ash';
+  ash.style.left=Math.random()*window.innerWidth+'px';
+  ash.style.top=window.innerHeight+Math.random()*200+'px';
+  ash.style.width=5+Math.random()*8+'px';
+  ash.style.height=ash.style.width;
+  ash.style.animationDuration=3+Math.random()*5+'s';
+  document.querySelector('.ash-container').appendChild(ash);
+}
+
+function copyScript(){
+  const script=document.getElementById("dieselScript").innerText;
+  navigator.clipboard.writeText(script).then(()=>{alert("Loadstring copied!");});
+}
+</script>
 </body>
 </html>
