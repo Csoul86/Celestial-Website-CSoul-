@@ -13,35 +13,36 @@
 
 <div class="popup" id="popup">
   <div class="popup-box">
-    <img src="diesel_logo.png" class="popup-logo">
+    <img src="logo.png" class="popup-logo">
     <h1>CSoul Hub</h1>
     <p>CSoul is a Discord server that creates high-quality Discord bots, powerful Roblox scripts, and maintains a friendly and active community.</p>
     <div class="popup-buttons">
-      <a href="home.html" class="shiny-btn">Continue</a>
-      <a href="https://discord.gg/UWBFhMZwkw" class="outline-btn">Join Discord</a>
+      <button class="custom-btn" onclick="goHome()">Continue</button>
+      <a href="https://discord.gg/UWBFhMZwkw" class="custom-btn outline-btn" target="_blank">Join Discord</a>
     </div>
   </div>
 </div>
 
 <script>
-const c=document.getElementById("bg"),x=c.getContext("2d")
-c.width=innerWidth;c.height=innerHeight
-let stars=[...Array(200)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,s:Math.random()*2}))
-let ash=[...Array(120)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*3+1,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,c:Math.random()>.5?"red":"blue"}))
+const c = document.getElementById("bg"), x = c.getContext("2d")
+c.width = innerWidth; c.height = innerHeight
+let stars = [...Array(300)].map(() => ({x: Math.random()*c.width, y: Math.random()*c.height, s: Math.random()*2}))
+let ash = [...Array(150)].map(() => ({x: Math.random()*c.width, y: Math.random()*c.height, r: Math.random()*3+1, dx: (Math.random()-.5)*0.4, dy: (Math.random()-.5)*0.4, c: Math.random() > 0.5 ? "red" : "blue"}))
 function draw(){
-x.clearRect(0,0,c.width,c.height)
-stars.forEach(s=>{x.fillStyle="#fff";x.fillRect(s.x,s.y,s.s,s.s)})
-ash.forEach(a=>{
-x.fillStyle=a.c=="red"?"rgba(255,0,80,.6)":"rgba(0,180,255,.6)"
-x.beginPath();x.arc(a.x,a.y,a.r,0,Math.PI*2);x.fill()
-a.x+=a.dx;a.y+=a.dy
-if(a.x<0||a.x>c.width)a.dx*=-1
-if(a.y<0||a.y>c.height)a.dy*=-1
-})
-requestAnimationFrame(draw)
+  x.clearRect(0,0,c.width,c.height)
+  stars.forEach(s => { x.fillStyle="#fff"; x.fillRect(s.x,s.y,s.s,s.s) })
+  ash.forEach(a => {
+    x.fillStyle = a.c=="red" ? "rgba(255,0,80,.6)" : "rgba(0,180,255,.6)"
+    x.beginPath(); x.arc(a.x,a.y,a.r,0,Math.PI*2); x.fill()
+    a.x += a.dx; a.y += a.dy
+    if(a.x<0||a.x>c.width) a.dx*=-1
+    if(a.y<0||a.y>c.height) a.dy*=-1
+  })
+  requestAnimationFrame(draw)
 }
 draw()
-window.onresize=()=>{c.width=innerWidth;c.height=innerHeight}
+window.onresize = () => {c.width=innerWidth; c.height=innerHeight}
+function goHome(){window.location.href="home.html"}
 </script>
 
 </body>
