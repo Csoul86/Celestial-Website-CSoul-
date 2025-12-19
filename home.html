@@ -53,8 +53,8 @@
 <script>
 const c=document.getElementById("bg"),x=c.getContext("2d")
 c.width=innerWidth;c.height=innerHeight
-let stars=[...Array(200)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,s:Math.random()*2}))
-let ash=[...Array(120)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*3+1,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,c:Math.random()>.5?"red":"blue"}))
+let stars=[...Array(300)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,s:Math.random()*2}))
+let ash=[...Array(150)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*3+1,dx:(Math.random()-.5)*0.4,dy:(Math.random()-.5)*0.4,c:Math.random()>.5?"red":"blue"}))
 function draw(){
 x.clearRect(0,0,c.width,c.height)
 stars.forEach(s=>{x.fillStyle="#fff";x.fillRect(s.x,s.y,s.s,s.s)})
