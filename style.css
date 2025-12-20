@@ -9,22 +9,22 @@ body{background:#05000c;color:#fff;min-height:100vh;overflow-x:hidden}
 @keyframes ash{0%{transform:translateY(0)}100%{transform:translateY(-600px)}}
 
 .center-box{max-width:420px;margin:18vh auto;padding:30px;text-align:center;background:rgba(0,0,0,.4);backdrop-filter:blur(15px);border-radius:20px;animation:fadeIn .8s ease}
-.logo{width:120px;margin-bottom:15px}
+.logo{width:100px;margin-bottom:15px}
 .hidden{opacity:0;transform:translateY(15px)}
-.center-box h1{font-size:28px;margin-bottom:10px;animation:pop .6s forwards}
-.center-box p{font-size:14px;opacity:.8}
-.buttons{margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{padding:12px 22px;border-radius:14px;text-decoration:none;color:#fff;font-weight:500;transition:.3s}
-.glow{background:linear-gradient(90deg,#7b2cff,#00c6ff);box-shadow:0 0 15px rgba(0,150,255,.6)}
-.glow:hover{box-shadow:0 0 25px rgba(120,50,255,.9)}
+button, .btn{transition:.3s}
+.button-box{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:14px;text-decoration:none;color:#fff;font-weight:500;background:linear-gradient(90deg,#7b2cff,#00c6ff);box-shadow:0 0 15px rgba(0,150,255,.6)}
+.btn:hover{box-shadow:0 0 25px rgba(120,50,255,.9);transform:scale(1.05)}
+.discord{background:#7289da;color:#fff}
+.paper{background:#f1c40f;color:#000}
 .outline{border:1px solid rgba(255,255,255,.3)}
 
 .top{display:flex;align-items:center;gap:10px;padding:15px;justify-content:space-between;flex-wrap:wrap}
 .top img{width:40px}
 .top h2{font-size:20px}
 .top-buttons{display:flex;gap:10px}
-.icon-btn{color:#fff;font-size:22px;text-decoration:none;padding:6px 10px;border-radius:10px;background:rgba(0,0,0,.4);transition:.3s}
-.icon-btn:hover{background:rgba(0,0,0,.7);transform:scale(1.1)}
+.icon-btn{color:#fff;font-size:22px;text-decoration:none;padding:6px 10px;border-radius:10px;background:linear-gradient(90deg,#7289da,#7289da);transition:.3s}
+.icon-btn:hover{transform:scale(1.1)}
 
 .quote{margin:25px auto;text-align:center;font-size:16px;min-height:22px;letter-spacing:.5px}
 
@@ -39,9 +39,13 @@ body{background:#05000c;color:#fff;min-height:100vh;overflow-x:hidden}
 .script-logo{width:60px;margin:10px 0}
 .code-box{background:rgba(0,0,0,.6);padding:12px;border-radius:12px;word-break:break-all;font-size:12px}
 .copy{margin-top:10px;width:100%;padding:10px;border:none;border-radius:12px;color:#fff;cursor:pointer;transition:.3s;background:linear-gradient(90deg,#ff0055,#7f00ff);box-shadow:0 0 18px rgba(255,0,85,.8)}
-.copy:hover{transform:scale(1.1)}
+.copy:hover{transform:scale(1.05)}
 
 .team p{margin:8px 0;font-size:14px;animation:glitch 1.5s infinite}
+.team.long-width{width:100%}
+
+.footer{text-align:center;margin:20px 0;font-size:12px;color:rgba(255,255,255,.5)}
+
 @keyframes glitch{0%{text-shadow:2px 0 red}50%{text-shadow:-2px 0 blue}100%{text-shadow:2px 0 red}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
