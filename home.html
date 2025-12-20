@@ -5,71 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CSoul Home</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<canvas id="bg"></canvas>
+<div class="bg"></div>
+<div class="particles"></div>
+<div class="ashes"></div>
 
-<div class="container">
+<header class="top">
+  <img src="logo.png">
+  <h2>CSoul Hub</h2>
+</header>
 
-<div class="card">
-<h2>Diesel n Steel</h2>
-<div class="script">
-<img src="diesel_logo.png">
-<div class="code" id="dns">loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/1c827020d6cad72f10adeec74df3628d5c5ef06ac6cdb517e6818993f4e73bb8/download"))()</div>
-<button class="copy" onclick="copy('dns')">Copy</button>
-</div>
-</div>
+<section class="content">
 
 <div class="card">
-<h2>Aladia PvP</h2>
-<div class="script">
-<img src="aladia_logo.png">
-<div class="code" id="ala">loadstring(game:HttpGet("https://raw.githubusercontent.com/liljam0/CsoulAladiapvp-Loader20-.lua/refs/heads/main/CsoulAladiapvpLoader20%25.lua.txt"))()</div>
-<button class="copy" onclick="copy('ala')">Copy</button>
+<h3>Diesel N Steel</h3>
+<img src="diesel_logo.png" class="script-logo">
+<div class="code-box">
+<code id="dns">
+loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/1c827020d6cad72f10adeec74df3628d5c5ef06ac6cdb517e6818993f4e73bb8/download"))()
+</code>
+<button onclick="copy('dns')" class="copy glow">Copy</button>
 </div>
 </div>
 
 <div class="card">
-<h2>DNS Sticker Stealer</h2>
-<div class="script">
-<img src="diesel_logo.png">
-<div class="code" id="stk">loadstring(game:HttpGet("https://raw.githubusercontent.com/Csoul86/CSoul-/refs/heads/main/Sticker%20Stealer.Lua"))()</div>
-<button class="copy" onclick="copy('stk')">Copy</button>
+<h3>Aladia PvP</h3>
+<img src="aladia_logo.png" class="script-logo">
+<div class="code-box">
+<code id="ala">
+loadstring(game:HttpGet("https://raw.githubusercontent.com/liljam0/CsoulAladiapvp-Loader20-.lua/refs/heads/main/CsoulAladiapvpLoader20%25.lua.txt"))()
+</code>
+<button onclick="copy('ala')" class="copy glow">Copy</button>
 </div>
 </div>
 
-<div class="card team">
-<h2>Moderation Team</h2>
-<p>Owner: Zel</p>
-<p>Co Owner: Kiro</p>
-<p>Moderator: Jam, Roben, JM, Cassy, Jee, Juswa, Zian, SongSong</p>
-<p>Trial Moderator: Zyph, Renseu, Miniken, Natsu</p>
+<div class="card">
+<h3>DNS Sticker Stealer</h3>
+<img src="diesel_logo.png" class="script-logo">
+<div class="code-box">
+<code id="stick">
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Csoul86/CSoul-/refs/heads/main/Sticker%20Stealer.Lua"))()
+</code>
+<button onclick="copy('stick')" class="copy glow">Copy</button>
+</div>
 </div>
 
+<div class="card">
+<h3>Moderation Team</h3>
+<p class="glitch">Owner: Zel</p>
+<p class="glitch">Co Owner: Kiro</p>
+<p class="glitch">Moderator: Jam, Roben, JM, Cassy, Jee, Juswa, Zian, SongSong</p>
+<p class="glitch">Trial Moderator: Zyph, Renseu, Miniken, Natsu</p>
 </div>
+
+</section>
 
 <script>
-const c=document.getElementById("bg"),x=c.getContext("2d")
-c.width=innerWidth;c.height=innerHeight
-let stars=[...Array(200)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,s:Math.random()*2}))
-let ash=[...Array(120)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*3+1,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,c:Math.random()>.5?"red":"blue"}))
-function draw(){
-x.clearRect(0,0,c.width,c.height)
-stars.forEach(s=>{x.fillStyle="#fff";x.fillRect(s.x,s.y,s.s,s.s)})
-ash.forEach(a=>{
-x.fillStyle=a.c=="red"?"rgba(255,0,80,.6)":"rgba(0,180,255,.6)"
-x.beginPath();x.arc(a.x,a.y,a.r,0,Math.PI*2);x.fill()
-a.x+=a.dx;a.y+=a.dy
-if(a.x<0||a.x>c.width)a.dx*=-1
-if(a.y<0||a.y>c.height)a.dy*=-1
-})
-requestAnimationFrame(draw)
+function copy(id){
+navigator.clipboard.writeText(document.getElementById(id).innerText)
 }
-draw()
-window.onresize=()=>{c.width=innerWidth;c.height=innerHeight}
-function copy(id){navigator.clipboard.writeText(document.getElementById(id).innerText)}
 </script>
 
 </body>
