@@ -18,13 +18,13 @@
   <img src="logo.png">
   <h2>CSoul Hub</h2>
   <div class="top-buttons">
-    <a href="https://discord.gg/UWBFhMZwkw" target="_blank" class="icon-btn"><i class="fab fa-discord"></i></a>
-    <a href="#scripts" class="icon-btn"><i class="fas fa-file-alt"></i></a>
+    <a href="https://discord.gg/UWBFhMZwkw" target="_blank" class="icon-btn discord"><i class="fab fa-discord"></i></a>
+    <a href="#scripts" class="icon-btn paper"><i class="fas fa-file-alt"></i></a>
   </div>
 </header>
 
 <section class="quote">
-  <p id="quote"></p>
+  <p id="quote-home"></p>
 </section>
 
 <section class="boost">
@@ -62,7 +62,7 @@
 </div>
 </div>
 
-<div class="card team">
+<div class="card team long-width">
 <h3>Moderation Team</h3>
 <p class="glitch">Owner: Zel</p>
 <p class="glitch">Co Owner: Kiro</p>
@@ -72,11 +72,15 @@
 
 </section>
 
+<footer class="footer">
+Website made by Zel
+</footer>
+
 <script>
 function copy(id){navigator.clipboard.writeText(document.getElementById(id).innerText)}
 const text = 'Welcome To CSoul Website! Here you can explore scripts and see our moderation team.'
 let i = 0
-function typeWriter(){if(i<text.length){document.getElementById('quote').innerHTML += text.charAt(i);i++;setTimeout(typeWriter,50)}}
+function typeWriter(){if(i<text.length){document.getElementById('quote-home').innerHTML += text.charAt(i);i++;setTimeout(typeWriter,50)}}
 typeWriter()
 </script>
 
