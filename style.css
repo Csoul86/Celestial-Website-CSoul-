@@ -11,13 +11,12 @@ body{background:#05000c;color:#fff;min-height:100vh;overflow-x:hidden}
 .center-box{max-width:420px;margin:18vh auto;padding:30px;text-align:center;background:rgba(0,0,0,.4);backdrop-filter:blur(15px);border-radius:20px;animation:fadeIn .8s ease}
 .logo{width:100px;margin-bottom:15px}
 .hidden{opacity:0;transform:translateY(15px)}
+.button-box{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:15px}
 button, .btn{transition:.3s}
-.button-box{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn{padding:12px 22px;border-radius:14px;text-decoration:none;color:#fff;font-weight:500;background:linear-gradient(90deg,#7b2cff,#00c6ff);box-shadow:0 0 15px rgba(0,150,255,.6)}
 .btn:hover{box-shadow:0 0 25px rgba(120,50,255,.9);transform:scale(1.05)}
 .discord{background:#7289da;color:#fff}
 .paper{background:#f1c40f;color:#000}
-.outline{border:1px solid rgba(255,255,255,.3)}
 
 .top{display:flex;align-items:center;gap:10px;padding:15px;justify-content:space-between;flex-wrap:wrap}
 .top img{width:40px}
