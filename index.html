@@ -3,46 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSoul Hub</title>
+<title>CSoul</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<canvas id="bg"></canvas>
+<div class="bg"></div>
+<div class="particles"></div>
+<div class="ashes"></div>
 
-<div class="popup" id="popup">
-  <div class="popup-box">
-    <img src="logo.png" class="popup-logo">
-    <h1>CSoul Hub</h1>
-    <p>CSoul is a Discord server that creates high-quality Discord bots, powerful Roblox scripts, and maintains a friendly and active community.</p>
-    <div class="popup-buttons">
-      <button class="custom-btn" onclick="goHome()">Continue</button>
-      <a href="https://discord.gg/UWBFhMZwkw" class="custom-btn outline-btn" target="_blank">Join Discord</a>
-    </div>
+<div class="center-box">
+  <img src="logo.png" class="logo hidden" id="logo">
+  <h1 class="hidden" id="title">CSoul Hub</h1>
+  <p class="hidden" id="desc">
+    CSoul is a Discord server that creates Discord bots, Roblox scripts, and has a friendly community.
+  </p>
+
+  <div class="buttons hidden" id="buttons">
+    <a href="home.html" class="btn glow">Continue</a>
+    <a href="https://discord.gg/UWBFhMZwkw" class="btn outline">Join Discord</a>
   </div>
 </div>
 
 <script>
-const c = document.getElementById("bg"), x = c.getContext("2d")
-c.width = innerWidth; c.height = innerHeight
-let stars = [...Array(300)].map(() => ({x: Math.random()*c.width, y: Math.random()*c.height, s: Math.random()*2}))
-let ash = [...Array(150)].map(() => ({x: Math.random()*c.width, y: Math.random()*c.height, r: Math.random()*3+1, dx: (Math.random()-.5)*0.4, dy: (Math.random()-.5)*0.4, c: Math.random() > 0.5 ? "red" : "blue"}))
-function draw(){
-  x.clearRect(0,0,c.width,c.height)
-  stars.forEach(s => { x.fillStyle="#fff"; x.fillRect(s.x,s.y,s.s,s.s) })
-  ash.forEach(a => {
-    x.fillStyle = a.c=="red" ? "rgba(255,0,80,.6)" : "rgba(0,180,255,.6)"
-    x.beginPath(); x.arc(a.x,a.y,a.r,0,Math.PI*2); x.fill()
-    a.x += a.dx; a.y += a.dy
-    if(a.x<0||a.x>c.width) a.dx*=-1
-    if(a.y<0||a.y>c.height) a.dy*=-1
-  })
-  requestAnimationFrame(draw)
-}
-draw()
-window.onresize = () => {c.width=innerWidth; c.height=innerHeight}
-function goHome(){window.location.href="home.html"}
+setTimeout(()=>logo.classList.remove("hidden"),400)
+setTimeout(()=>title.classList.remove("hidden"),900)
+setTimeout(()=>desc.classList.remove("hidden"),1400)
+setTimeout(()=>buttons.classList.remove("hidden"),1900)
 </script>
 
 </body>
